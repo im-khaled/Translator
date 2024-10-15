@@ -44,7 +44,7 @@ public class Container {
 
     public String deleteMember( Integer id ) {
         Member rec = getMember( id );
-        if (rec == null) return "Kunde nicht enthalten - ERROR"; else {
+        if (rec == null) return "Kunde nicht enthalten!"; else {
             liste.remove(rec);
             return "Kunde mit der ID " + id + " wurde gelöscht";
         }

@@ -19,7 +19,7 @@ public class Test {
         Container store = new Container();
 
 
-        vergleich ( "Probe 1 - Pruefe auf leeren Store" , 0 , store.size()  );
+        vergleich ( "Test 1 - Pruefe auf leeren Store" , 0 , store.size()  );
 
         store.addMember( r1 );
         store.addMember( r2 );
@@ -27,20 +27,20 @@ public class Test {
         store.addMember( r4 );
 
 
-        vergleich ( "Probe 2 - Prüfe, ob vier Objekte eingefuegt ist" , 4 , store.size()  );
+        vergleich ( "Test 2 - Prüfe, ob vier Objekte eingefuegt ist" , 4 , store.size()  );
 
         store.addMember(r5);
 
-        vergleich ( "Probe 3 - Prüfe, ob fuenftes Objekt eingefuegt ist" , 5 , store.size()  );
+        vergleich ( "Test 3 - Prüfe, ob fuenftes Objekt eingefuegt ist" , 5 , store.size()  );
 
         String result = store.deleteMember(32);
 
-        vergleich ( "Probe 4 - Pruefe, ob Objekt geloescht wist" ,  4 , store.size()  );
+        vergleich ( "Test 4 - Pruefe, ob Objekt geloescht wist" ,  4 , store.size()  );
 
         result = store.deleteMember(87);
         System.out.println( result );
 
-        vergleich ( "Probe 5 - Pruefe, ob ein Objekt nicht geloescht ist" , 4 , store.size()  );
+        vergleich ( "Test 5 - Pruefe, ob ein Objekt nicht geloescht ist" , 4 , store.size()  );
 
         try {
             store.addMember( r2 );
@@ -50,7 +50,7 @@ public class Test {
 
         } finally {
 
-            vergleich ( "probe 6 - Pruefen, ob ein Objekt nicht doppelt eingefuegt wurde" , 4 , store.size()  );
+            vergleich ( "Test 6 - Pruefen, ob ein Objekt nicht doppelt eingefuegt wurde" , 4 , store.size()  );
         }
 
         store.dump();
