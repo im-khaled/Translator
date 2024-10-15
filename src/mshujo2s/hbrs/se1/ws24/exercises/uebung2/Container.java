@@ -1,4 +1,6 @@
 package mshujo2s.hbrs.se1.ws24.exercises.uebung2;
+import mshujo2s.hbrs.se1.ws24.exercises.uebung3.PersistenceStrategyStream;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.*;
@@ -16,6 +18,10 @@ public class Container {
 
     private List<Member> liste = new ArrayList<Member>();
 
+    public static Container getInstance() {
+
+        return new Container();
+    }
 
 
     public void addMember ( Member r ) throws ContainerException {
@@ -44,7 +50,7 @@ public class Container {
 
     public String deleteMember( Integer id ) {
         Member rec = getMember( id );
-        if (rec == null) return "Kunde nicht enthalten!"; else {
+        if (rec == null) return "Kunde nicht enthalten - ERROR"; else {
             liste.remove(rec);
             return "Kunde mit der ID " + id + " wurde gelöscht";
         }
@@ -76,5 +82,14 @@ public class Container {
             }
         }
         return null;
+    }
+
+    public void setPersistenceStrategie(PersistenceStrategyStream<java.lang.reflect.Member> memberPersistenceStrategyStream) {
+    }
+
+    public void store() {
+    }
+
+    public void load() {
     }
 }
